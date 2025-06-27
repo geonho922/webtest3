@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>동네지도 - 회원가입</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div class="auth-container">
+    <div class="auth-header">
+      <h1>회원가입</h1>
+    </div>
+    
+    <div class="consent-section">
+      <h3>개인정보 수집 동의 및 위치정보 동의</h3>
+      <div class="consent-box">
+        <p>개인정보 처리방침 및 위치기반서비스 이용약관에 동의하시겠습니까?</p>
+      </div>
+      <div class="consent-checkbox">
+        <input type="checkbox" id="consent-agree">
+        <label for="consent-agree">동의합니다</label>
+      </div>
+    </div>
+    
+    <button id="proceed-to-register-form" class="submit-btn" disabled onclick="location.href='register-form.html'">다음</button>
+    <button class="back-btn" onclick="location.href='login.html'">로그인으로 돌아가기</button>
+  </div>
+
+  <script>
+    document.getElementById('consent-agree').addEventListener('change', function() {
+      const proceedBtn = document.getElementById('proceed-to-register-form');
+      if (this.checked) {
+        proceedBtn.disabled = false;
+      } else {
+        proceedBtn.disabled = true;
+      }
+    });
+  </script>
+</body>
+</html>
