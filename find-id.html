@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>동네지도 - 아이디 찾기</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div class="auth-container">
+    <div class="auth-header">
+      <h1>아이디 찾기</h1>
+    </div>
+    
+    <form class="auth-form" id="find-id-form">
+      <div class="form-group">
+        <label>사용자 이름</label>
+        <input type="text" id="find-id-username" required>
+      </div>
+      
+      <div class="form-group">
+        <label>이메일</label>
+        <input type="email" id="find-id-email" required>
+      </div>
+      
+      <button type="submit" class="submit-btn">다음</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('find-id-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const username = document.getElementById('find-id-username').value;
+      const email = document.getElementById('find-id-email').value;
+      
+      alert('아이디 찾기 요청이 처리되었습니다.');
+      location.href = 'login.html';
+    });
+  </script>
+</body>
+</html>
